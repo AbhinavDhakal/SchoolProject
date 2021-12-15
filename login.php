@@ -117,9 +117,14 @@ if ($_POST) {
     $enteredPassword = $_POST["passwordLogin"];
 
 
-    //Create connection and connect to database
-    // $connection = mysqli_connect("localhost", "root", "", "SchoolProject");
-    $connection = mysqli_connect("localhost", "id16492889_dhakal", "Abhinav@12345", "id16492889_schoolproject");
+		//Create connection and connect to database
+$connectionLocal= mysqli_connect("localhost", "root", "", "SchoolProject"); 
+   $connectionHosting=mysqli_connect("localhost", "id16492889_dhakal", "Abhinav@12345", "id16492889_schoolproject");
+if($connectionLocal){
+	$connection = $connectionLocal;
+}else{
+	$connection = $connectionHosting;
+}
 
     //Queries
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +9,7 @@ body {
   background-color: #1d2021;
   color: white;
   height: 100vh;
+  font-family: "Ubuntu",sans-serif;
 }
 nav {
   display: flex;
@@ -21,7 +24,7 @@ nav a {
   padding: 13px 0;
   margin: 50px 0 0 20px;
   width: 100px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 form a {
@@ -29,6 +32,9 @@ form a {
   color: #458588;
 }
 
+h1,h2,h3,h4,h5,h6{
+	font-weight: 500;
+}
 .input {
   box-sizing: border-box;
   border: none;
@@ -85,7 +91,7 @@ form a {
   padding: 13px 0;
   margin: 12px;
   width: 100px;
-  font-weight: 600;
+  font-weight: 500;
 }
 #index h1 {
   margin-bottom: 50px;

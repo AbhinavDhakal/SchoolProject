@@ -19,14 +19,20 @@ session_start();
     <main>
         <h1>Welcome!</h1>
         <div class="result">
-            <?php
-            if ($_SESSION['id']) {
+<?php
 
+				//Create connection and connect to database
+$connectionLocal= mysqli_connect("localhost", "root", "", "SchoolProject"); 
+   $connectionHosting=mysqli_connect("localhost", "id16492889_dhakal", "Abhinav@12345", "id16492889_schoolproject");
+if($connectionLocal){
+	$connection = $connectionLocal;
+}else{
+	$connection = $connectionHosting;
+}
+
+
+            if ($_SESSION['id'] ) {
                 $id = $_SESSION["id"];
-
-                //Create connection and connect to database
-                // $connection = mysqli_connect("localhost", "root", "", "SchoolProject");
-                $connection = mysqli_connect("localhost", "id16492889_dhakal", "Abhinav@12345", "id16492889_schoolproject");
 
                 //Queries
 
@@ -41,14 +47,33 @@ session_start();
                     echo "<br><br>Username: " . $row["username"];
                     echo "<br><br>Email: " . $row["email"];
                     echo "<br><br>Age: " . $row["age"];
-                    echo "<br><br>Gender: " . $row["gender"];
-                }
+                    echo "<br><br>Gender: " . $row["gender"];}
+				
+
             } else {
                 echo '<script type="text/javascript">window.location = "login.php"</script>';
-            }
+}
             ?>
         </div>
-    </main>
+<div id='adminPanel'>
+
+<?php
+if($_SESSION['id']==1){
+	$query2 = "SELECT * FROM accounts";
+	$result2 = mysqli_query($connection,$query2);
+	if($result2){
+		echo"<h2>Database</h2>";
+		echo "<table border=1><tr><th>Id</th><th>Name</th><th>Age</th><th>Gender</th><th>Username</th><th>Email</th><th>Password</th></tr>";
+		while($row2 = mysqli_fetch_assoc($result2)){
+			if($row2['id']==1) continue;
+			echo "<tr><th>".$row2['id']."</th><th>".$row2['name']."</th><th>".$row2['age']."</th><th>".$row2['gender']."</th><th>".$row2['username']."</th><th>".$row2['email']."</th><th>".$row2['password']."</th><tr>";
+		}
+		echo "</table>";
+	}
+}
+?>
+</div>	
+</main>
 </body>
 <!--Trying to remove watermark, Ignore this-->
 <script>
