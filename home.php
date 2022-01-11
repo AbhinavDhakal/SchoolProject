@@ -22,13 +22,7 @@ session_start();
 <?php
 
 				//Create connection and connect to database
-$connectionLocal= mysqli_connect("localhost", "root", "", "SchoolProject"); 
-   $connectionHosting=mysqli_connect("localhost", "id16492889_dhakal", "Abhinav@12345", "id16492889_schoolproject");
-if($connectionLocal){
-	$connection = $connectionLocal;
-}else{
-	$connection = $connectionHosting;
-}
+   $connection=mysqli_connect("localhost", "id16492889_dhakal", "Abhinav@12345", "id16492889_schoolproject");
 
 
             if ($_SESSION['id'] ) {

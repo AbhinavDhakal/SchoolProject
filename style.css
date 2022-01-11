@@ -43,6 +43,7 @@ h1,h2,h3,h4,h5,h6{
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: 300;
+  width: 275px;
 }
 
 .input:focus {
@@ -120,12 +121,13 @@ h1,h2,h3,h4,h5,h6{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
-#gender {
-  width: 285px;
+#gender{
+	width: 275px;
 }
+
 #gender input {
   font-size: 20px;
   font-weight: 300;

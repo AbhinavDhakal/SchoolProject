@@ -165,12 +165,13 @@ if (isset($_SESSION['id'])) {
 
             <!--Gender Radio Buttons-->
 
-            <div id="gender">
+            <div>
                 <label>Gender:</label><br>
+<div id="gender">
                 <input type="radio" name="genderRegister" value="male">Male
                 <input type="radio" name="genderRegister" value="female">Female
                 <input type="radio" name="genderRegister" value="other">Other
-
+</div>
                 <br>
             </div>
 
@@ -209,13 +210,7 @@ if ($_POST) {
     $gender = htmlspecialchars($_POST["genderRegister"]);
 
 	//Create connection and connect to database
-$connectionLocal= mysqli_connect("localhost", "root", "", "SchoolProject"); 
-   $connectionHosting=mysqli_connect("localhost", "id16492889_dhakal", "Abhinav@12345", "id16492889_schoolproject");
-if($connectionLocal){
-	$connection = $connectionLocal;
-}else{
-	$connection = $connectionHosting;
-}
+   $connection=mysqli_connect("localhost", "id16492889_dhakal", "Abhinav@12345", "id16492889_schoolproject");
     //Queries
 
 
